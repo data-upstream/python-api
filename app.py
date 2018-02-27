@@ -15,7 +15,7 @@ def convert_timeseries():
         abort(400)
     
     ts = pd.Series()
-    return jsonify(ts), 200
+    return ts.to_json(), 200
 
 
 if __name__ == '__main__':
