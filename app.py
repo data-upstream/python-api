@@ -13,7 +13,8 @@ def convert_timeseries():
     if not request.json:
         abort(400)
     
-    return jsonify({'success': True}), 201
+    ts = pd.Series()
+    return jsonify(ts), 200
 
 
 if __name__ == '__main__':
