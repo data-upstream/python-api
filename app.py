@@ -1,6 +1,7 @@
 from flask import Flask
 from flask import request
 from flask import jsonify
+from flask import abort
 
 import pandas as pd
 import numpy as np
@@ -11,13 +12,12 @@ app = Flask(__name__)
 def index():
     return "Hello, World!"
 
-@app.route('/api/v1.0/pandas/ts', methods=['POST'])
+@app.route('/api/v1.0/pandas/ts/downsample', methods=['POST'])
 def convert_timeseries():
     if not request.json:
         abort(400)
     
-    rng = pd.date_range('1/1/2011', periods=72, freq='H')
-    ts = pd.Series(np.random.randn(len(rng)), index=rng)
+    ts = pd.Series(request.json.get('data'), index=request.json.get('index'))
     return ts.to_json(), 200
 
 
