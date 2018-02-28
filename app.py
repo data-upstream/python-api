@@ -13,7 +13,7 @@ app = Flask(__name__)
 def index():
     return "Python API online!"
 
-
+# {"index": [], "data": []}; range: e.g. "1h", 2d" "20m", etc..
 @app.route('/api/v1.0/pandas/ts/downsample/<range>', methods=['POST'])
 def downsample(range):
     if not request.json:
