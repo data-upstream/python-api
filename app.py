@@ -13,7 +13,7 @@ def index():
     return "Hello, World!"
 
 @app.route('/api/v1.0/pandas/ts/downsample/<range>', methods=['POST'])
-def convert_timeseries(range):
+def downsample(range):
     if not request.json:
         abort(400)
 
