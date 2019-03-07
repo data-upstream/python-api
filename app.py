@@ -39,3 +39,15 @@ if __name__ == '__main__':
         debug=True,
         host='0.0.0.0', port=5000
     )
+
+@app.route('/api/v1.0/hooks/test', methods=['POST'])
+@cross_origin()
+def hook(range):
+  if not request.json:
+    abort(400)
+
+  resp = {"success": 200}
+    
+  return resp.to_json(), 200
+
+
