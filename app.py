@@ -33,13 +33,6 @@ def downsample(range):
     return tsResample.to_json(), 200
 
 
-
-if __name__ == '__main__':
-    app.run(
-        debug=True,
-        host='0.0.0.0', port=5000
-    )
-
 @app.route('/api/v1.0/hooks/test', methods=['POST'])
 @cross_origin()
 def hook(range):
@@ -50,4 +43,11 @@ def hook(range):
     
   return resp.to_json(), 200
 
+
+if __name__ == "__main__":
+  app.run(
+      ssl_context='adhoc',
+      debug=True,
+      host='0.0.0.0', port=5000
+  )
 
