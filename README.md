@@ -20,4 +20,4 @@ optional ?mean=1 parameter for mean output
 
 ## hook test
 
-curl -X POST https://localhost:5000 --insecure -H "Content-Type: application/json" -d $'{"param": "test"}'
+curl -X POST https://localhost:5000/api/v1.0/hooks/test --insecure -H "Content-Type: application/json" -d $'{"param": "test"}'
