@@ -1,5 +1,10 @@
 # python-api
 
+cd DIR
+python3.X -m virtual-env .
+sourde bin/activate
+pip install -r requirements.txt
+
 ##deployed at
 https://python-api.data-upstream.ch/
 
