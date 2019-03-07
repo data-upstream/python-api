@@ -6,6 +6,7 @@ from flask_cors import CORS, cross_origin
 
 import pandas as pd
 import numpy as np
+import json
 
 app = Flask(__name__)
 CORS(app)
@@ -35,13 +36,12 @@ def downsample(range):
 
 @app.route('/api/v1.0/hooks/test', methods=['POST'])
 @cross_origin()
-def hook(range):
+def hook():
   if not request.json:
     abort(400)
 
-  resp = {"success": 200}
-    
-  return resp.to_json(), 200
+  resp = json.dumps({"success": "200"})    
+  return resp, 200
 
 
 if __name__ == "__main__":

@@ -18,4 +18,6 @@ range: e.g. "1h", 2d" "20m", etc..
 
 optional ?mean=1 parameter for mean output
 
-## more functions see app.py
+## hook test
+
+curl -X POST https://localhost:5000 --insecure -H "Content-Type: application/json" -d $'{"param": "test"}'
